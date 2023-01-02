@@ -1,0 +1,212 @@
+/* body font-family and background-color */
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: rgb(13, 13, 13);
+  color: #fff;
+}
+
+/*
+ * Header
+ */
+
+ .title-logo{
+  padding-bottom: 20px;
+  font-family: 'Lato';
+  font-weight: bold;
+ }
+
+ .nav-masthead .nav-link {
+  color: rgb(255, 255, 255);
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  color: #138cfd;
+  border-bottom-color: #138cfd
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.page-count{
+  color: #aaa;
+}
+
+/*
+ * Hero/Landing page 
+ */
+
+/* Style for the landing page container */
+.landing-page-container {
+  padding: 50px;
+  max-width: 42em;
+  text-align: center;
+}
+
+/* Style for the landing page title and description */
+.landing-page-title,
+.landing-page-description {
+  color: #fff;
+}
+
+/* Style for the browse movies button */
+
+.browse-movies-button {
+  background-color: #138cfd;
+  border-color: #138cfd;
+  color: #ffffff;
+  margin-bottom: 2px;
+}
+
+.browse-movies-button:hover {
+  background-color: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+/*
+ * Movies/Cards
+ */
+
+/* custom styles to the movie cards */
+.movie-card {
+  background-color: #1c1c1c;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.movie-card-description {
+  background-color: #1c1c1c;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+/* Style for the movie poster images */
+.movie-card img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+/* Style for the movie info container */
+.movie-info {
+  padding: 20px;
+}
+
+h2 a{
+  text-decoration: none;
+  color: #138cfd;
+}
+
+h2 a:hover {
+  color: #0061bc;
+}
+
+/* Style for the movie title, genre, vote average and release date */
+.movie-title, 
+.movie-genres,
+.movie-vote-average
+.movie-release-date {
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: auto;
+}
+
+.movie-compensation{
+  color: #fff;
+  margin-bottom: auto;
+}
+
+/* Style for the movie description */
+.movie-description {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/*
+ * Comment Sections
+ */
+
+.form-comment{
+  margin-top: 5px;
+}
+
+.prompt{
+  margin: 0px;
+  text-align: right;
+  color:#aaa;
+  font-size: 8px;
+}
+
+.posted-comment{
+  margin-bottom: 1px;
+}
+
+.posted-time{
+  font-size: 10px;
+  color: #aaa;
+}
+
+.all-comments-link{
+  color: #aaa;
+  text-decoration: none;
+}
+
+.all-comments-link:hover{
+  color: #138cfd;
+  text-decoration: none;
+}
+
+/*
+ * Pagination
+ */
+
+ .page-item .page-link {
+  background-color: #1c1c1c;
+  color: white;
+  border-color: #1c1c1c;
+  
+}
+
+.page-item .page-link:hover {
+  background-color: white;
+  color: #1c1c1c;;
+  border-color: #1c1c1c;
+  
+}
+
+.form-control {
+  background-color: #afafaf;
+  border-color: #afafaf;
+  color: #646464;
+}
+
+/*
+ * Comments Page
+ */
+
+ .comment-container{
+  background-color: #1c1c1c;
+  padding-top: 12px;
+  border-radius: 8px;
+ }
+
+ .sub-title{
+  margin-bottom: 0px;
+ }
+
+ /*
+ * footer
+ */
+
+ .footer-description{
+  text-align: center;
+  padding: 40px;
+  color: #aaa;
+ }

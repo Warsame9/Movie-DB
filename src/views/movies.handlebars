@@ -1,0 +1,41 @@
+<p class="page-count"> All Movies Page {{page}} of {{last}}</p>
+
+<div class="row mt-3">
+{{#each results}}
+      <div class="col-md-4">
+      <div class="movie-card">
+        <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="Movie 1 Poster">
+        <div class="movie-info">
+          <h2 class="movie-title"><a href="/movies/{{_id}}">{{title}}</a></h2>
+          <p class="movie-release-date">
+            {{#truncate (toString release_date) 16 ''}}
+              {{this}}
+            {{/truncate}}
+          </p>
+          <p class="movie-description">{{overview}}</p>
+        </div>
+      </div>
+  </div>
+{{/each}}
+</div>
+
+<ul class="pagination mx-auto">
+  {{#if (gt page 1)}}
+  <li class="page-item"><a class="page-link" href="?page={{previous}}">Previous</a></li>
+  {{else}}
+  <li class="page-item previous" style="display: none;"><a class="page-link" href="?page={{previous}}">Previous</a></li>
+  {{/if}}
+  <li class="page-item"><a class="page-link" href="?page={{page}}">{{page}}</a></li>
+  {{#if (gt last page)}}
+  <li class="page-item"><a class="page-link" href="?page={{next}}">Next</a></li>
+  <li class="page-item"><a class="page-link" href="?page={{last}}">Last</a></li>
+  {{else}}
+  <li class="page-item next" style="display: none;"><a class="page-link" href="?page={{next}}">Next</a></li>
+  <li class="page-item last" style="display: none;"><a class="page-link" href="?page={{last}}">Last</a></li>
+  {{/if}}
+</ul>
+
+
+
+
+

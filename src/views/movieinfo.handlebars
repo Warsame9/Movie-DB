@@ -1,0 +1,55 @@
+<div class="row mt-3">
+  {{#each movie}}
+        <div class="col-md-4">
+        <div class="movie-card">
+          <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="Movie 1 Poster">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="movie-card-description">
+            <div class="movie-info">
+              <h2 class="movie-title">{{title}}</h2>
+              <p class="movie-genres">{{genres}}</p>
+              <p class="movie-vote-average">Vote Average: {{vote_average}}</p>
+              <p class="movie-release-date">
+              {{#truncate (toString release_date) 16 ''}}
+                {{this}}
+              {{/truncate}}
+              </p>
+              <p class="movie-description">{{overview}}</p>
+              <p class="movie-compensation">Revenue: {{revenue}}</p>
+              <p class="movie-compensation">Budget: {{budget}}</p>
+              <form class="form-comment" action="/movies/{{_id}}" method='POST'>
+                <label>Comment:</label>
+                <textarea class="form-control" name="commentBody" rows="4" cols="20" maxlength="140"></textarea>
+                  <p class="prompt">(Limit: 140 characters)</p>
+                <button class="btn btn-primary post-button browse-movies-button" type="submit" name="button">Post</button>
+              </form>
+            </div>
+          </div>
+        </div>
+  {{/each}}
+  <div class="col-md-4">
+      <div class="movie-card">
+          <div class="movie-info">
+            <h2>Comments({{this.commentCount}}):</h2>
+                {{#each (limit comments 5)}}
+                  <p class="posted-comment">
+                    {{#truncate text 140 '...'}}
+                      {{this}}
+                    {{/truncate}}
+                  </p>
+                  <p class="posted-time">{{createdAt}}</p>
+                {{/each}}
+                {{#if (gt comments.length 5)}}
+                  {{#each movie}}
+                    <a class="all-comments-link" href="/comments/{{_id}}">All Comments</a>
+                  {{/each}}
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

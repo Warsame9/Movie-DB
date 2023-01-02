@@ -1,0 +1,51 @@
+<div class="container mt-5">
+<form action="/search" method="GET" class="form-inline" style="text-align: center;">
+  <input type="text" id="title" name="title" placeholder="Title" class="form-control form-control-sm mb-2 mr-sm-2 w-25 d-inline-block">
+  <input type="submit" value="Search" class="btn btn-primary btn-sm browse-movies-button browse-movies-button:hover">
+</form>
+</div>
+
+{{#if title}}
+
+<p class="page-count"> Page {{page}} of {{last}} for "{{title}}"</p>
+
+<div class="row mt-3">
+{{#each results}}
+      <div class="col-md-4">
+      <div class="movie-card">
+        <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="Movie 1 Poster">
+        <div class="movie-info">
+          <h2 class="movie-title"><a href="/movies/{{_id}}">{{title}}</a></h2>
+           <p class="movie-release-date">
+            {{#truncate (toString release_date) 16 ''}}
+              {{this}}
+            {{/truncate}}
+           </p>
+          <p class="movie-description">{{overview}}</p>
+        </div>
+      </div>
+  </div>
+{{/each}}
+</div>
+
+<ul class="pagination mx-auto">
+  {{#if (gt page 1)}}
+  <li class="page-item"><a class="page-link" href="/search?title={{title}}&page={{previous}}">Previous</a></li>
+  {{else}}
+  <li class="page-item previous" style="display: none;"><a class="page-link" href="/search?title={{title}}&page={{previous}}">Previous</a></li>
+  {{/if}}
+  <li class="page-item"><a class="page-link" href="/search?title={{title}}&page={{page}}">{{page}}</a></li>
+  {{#if (gt last page)}}
+  <li class="page-item"><a class="page-link" href="/search?title={{title}}&page={{next}}">Next</a></li>
+  <li class="page-item"><a class="page-link" href="/search?title={{title}}&page={{last}}">Last</a></li>
+  {{else}}
+  <li class="page-item next" style="display: none;"><a class="page-link" href="/search?title={{title}}&page={{next}}">Next</a></li>
+  <li class="page-item last" style="display: none;"><a class="page-link" href="/search?title={{title}}&page={{last}}">Last</a></li>
+  {{/if}}
+</ul>
+{{/if}}
+
+
+
+
+
